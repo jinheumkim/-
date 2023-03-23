@@ -1,0 +1,27 @@
+number = int(input())
+b_number = []
+while number >0 :
+    b_number.append(number%2)
+    number = number//2
+b_number.reverse()
+print(b_number)
+
+
+
+number = int(input())
+while number:
+    b_number = number%2
+    number = number//2
+    print(b_number,end = "")
+    if number == 1:
+        print("1")
+        break
+
+
+number = int(input())
+result = ""
+while number:
+    b_number = number%2
+    number = number//2
+    result = str(b_number) + result
+print(result)

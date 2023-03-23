@@ -1,0 +1,26 @@
+num = int(input())
+board = [list(map(int,input().split())) for _ in range(num)]
+sum_board = []
+sum_width = []
+sum_Vertical = []
+sum_diagonal = []
+for i in range(0,len(board)):
+    sum_board.append(sum(board[i]))
+
+for j in range(0,len(board)):
+    sum_width.append(board[j][j])
+sum_board.append(sum(sum_width))
+
+for k in range(len(board)-1,-1,-1):
+    sum_Vertical.append(board[k][k])
+sum_board.append(sum(sum_Vertical))
+
+for i in range(0,len(board)):
+    sum_diagonal.clear()
+    for j in range(0,len(board)):
+        sum_diagonal.append(board[j][i])
+    sum_board.append(sum(sum_diagonal))
+
+result = max(sum_board)
+
+print(result)

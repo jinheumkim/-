@@ -1,0 +1,25 @@
+b_number = int(input())
+number = []
+result = 0
+number = [int(i) for i in str(b_number)]
+number.reverse()
+for i in range(len(number)):
+    if number[i] == 1:
+        result += number[i]*2**(i)
+    else:
+        result += 0
+print(result)
+
+
+
+def solve(b_number):
+    number = []
+    result = 0
+    number = [int(i) for i in str(b_number)]          #리스트값 분할[1001] = [1,0,0,1]
+    number.reverse()
+    for i in range(len(number)):
+        if number[i] == 1:
+            result += number[i]*2**(i)
+        else:
+            result += 0
+    return result

@@ -1,0 +1,88 @@
+def matrix():
+    print("행렬a")
+    a11, a12, a13, a14 = map(int,input().split())
+    a21, a22, a23, a24 = map(int,input().split())
+    a31, a32, a33, a34 = map(int,input().split())
+    a41, a42, a43, a44 = map(int,input().split())
+    print("행렬b")
+    b11, b12, b13, b14 = map(int,input().split())
+    b21, b22, b23, b24 = map(int,input().split())
+    b31, b32, b33, b34 = map(int,input().split())
+    b41, b42, b43, b44 = map(int,input().split())
+    print("값")
+    print(a11+b11 , a12+b12 , a13+b13 , a14+b14)
+    print(a21+b21 , a22+b22 , a23+b23 , a24+b24)
+    print(a31+b31 , a32+b32 , a33+b33 , a34+b34)
+    print(a41+b41 , a42+b42 , a43+b43 , a44+b44)
+    return
+
+
+a_matrix = [[1,0,0,1],[0,1,0,1],[1,0,1,0],[0,1,1,0]]  #0 1 2 3
+b_matrix = [[0,1,0,1],[1,0,1,0],[0,1,0,1],[1,0,0,1]]
+a_b_matrix = []
+for i in range(len(a_matrix)):
+    ab_matrix = []
+    for j in range(len(a_matrix)):
+        ab_matrix.append(a_matrix[i][j] + b_matrix[i][j]) #0,0 ~3,3 더하기
+    a_b_matrix.append(ab_matrix)
+print(a_b_matrix)
+
+
+
+
+a_matrix = [[1,0,0,1],[0,1,0,1],[1,0,1,0],[0,1,1,0]]  #0 1 2 3
+b_matrix = [[0,1,0,1],[1,0,1,0],[0,1,0,1],[1,0,0,1]]
+ab_matrix =[a_matrix[i][j] + b_matrix[i][j] for i in range(len(a_matrix)) for j in range(len(a_matrix))]
+print(ab_matrix)
+
+
+
+
+def matrix(a_matrix,b_matrix):
+    ab_matrix =[[a_matrix[j][i] + b_matrix[j][i] for i in range(len(a_matrix))]
+    for j in range(len(a_matrix))]
+    return ab_matrix
+print(matrix([
+  [1, 1, 0, 0],
+  [0, 1, 1, 0],
+  [0, 1, 0, 0],
+  [0, 0, 0, 1]],
+  [[1, 1, 0, 1],
+  [1, 0, 0, 0],
+  [1, 0, 1, 0],
+  [1, 0 ,1, 0]
+]))
+
+
+def matrix(a_matrix,b_matrix):
+    ab_matrix = []
+    for i in range(len(a_matrix)):
+        for j in range(len(a_matrix[0])):   
+            a_matrix[i][j] = a_matrix[i][j] + b_matrix[i][j]
+    ab_matrix = a_matrix
+    return ab_matrix
+
+print(matrix([
+[1,0,0,0],
+[1,0,1,0],
+[1,0,1,1],
+[0,1,0,1]],
+[[0,0,0,0],
+[0,1,0,1],
+[1,0,1,0],
+[0,0,1,0]]))
+
+
+
+
+def matrix(a_matrix,b_matrix):
+    if len(a_matrix) != len(b_matrix) & len(a_matrix[0]) != len(b_matrix[0]):
+        return "더할 수 없는 행렬입니다."
+    
+    a_b_matrix = [[0] * len(a_matrix) for _ in range(len(a_matrix[0]))]
+    for i in range(len(a_matrix)):
+        for j in range(len(a_matrix[0])):   
+               a_b_matrix[i][j] = a_matrix[i][j] + b_matrix[i][j]
+        return a_b_matrix
+
+

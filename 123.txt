@@ -1,0 +1,26 @@
+import itertools
+word = input()
+dic = []
+dic = list(itertools.product('AEIOU',repeat=1))
+dic += list(itertools.product('AEIOU',repeat=2))
+dic += list(itertools.product('AEIOU',repeat=3))
+dic += list(itertools.product('AEIOU',repeat=4))
+dic += list(itertools.product('AEIOU',repeat=5))
+for i in range(len(dic)):
+    dic[i] =''.join(dic[i])
+dic.sort()
+print(dic.index(word)+1)
+
+
+def aaa(word):
+    import itertools
+    dic = []
+    dic = list(itertools.product('AEIOU',repeat=1))
+    dic += list(itertools.product('AEIOU',repeat=2))
+    dic += list(itertools.product('AEIOU',repeat=3))
+    dic += list(itertools.product('AEIOU',repeat=4))
+    dic += list(itertools.product('AEIOU',repeat=5))
+    dic.sort()
+    for i in range(len(dic)):
+        dic[i] = ''.join(dic[i])
+    return dic.index(word)+1
